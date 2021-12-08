@@ -1,5 +1,4 @@
 {% load static %} {% url 'home' as home_url %} {% url 'contact' as contact_url %} {% url 'products:list' as products_list_url %} {% url 'login' as login_url %} {% url 'register' as register_url %}{% url 'logout' as logout_url %}
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,9 +15,9 @@
         <div class="header container">
             <div class="nav-bar">
                 <div class="brand">
-                <a href="{{ home_url}}">
+                    <a href="{{ home_url}}">
                         <h1>SP BURGUERS</h1>
-                    </a> 
+                    </a>
                 </div>
                 <div class="nav-list">
                     <div class="hamburger">
@@ -27,7 +26,7 @@
                     <ul>
                         <li><a href="{{ home_url}}" data-after="Home">Inicio</a></li>
                         {% if not user.is_authenticated %}
-                    <li class="{% if request.path == products_list_url %} active {% endif %}"><a class="nav-link" href="{% url 'register'%}">Produtos</a></li>{% endif %}
+                        <li class="{% if request.path == products_list_url %} active {% endif %}"><a class="nav-link" href="{% url 'register'%}">Produtos</a></li>{% endif %}
                         <li><a href="{{ home_url}}" data-after="Contact">Contatos</a></li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
